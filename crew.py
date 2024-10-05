@@ -7,14 +7,19 @@ from tools.yf_fundamental_analysis_tool import yf_fundamental_analysis
 from langchain_community.tools.yahoo_finance_news import YahooFinanceNewsTool
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
-from dotenv import load_dotenv
+import streamlit as st  # Import Streamlit
 
-# Load environment variables from .env file
-load_dotenv()
-os.environ["SERPER_API_KEY"] = os.getenv("SERPER_API_KEY")
-os.environ["REDDIT_CLIENT_ID"] = os.getenv("REDDIT_CLIENT_ID")
-os.environ["REDDIT_CLIENT_SECRET"] = os.getenv("REDDIT_CLIENT_SECRET")
-os.environ["REDDIT_USER_AGENT"] = os.getenv("REDDIT_USER_AGENT")
+# Access the secrets directly from Streamlit
+serper_api_key = st.secrets["SERPER_API_KEY"]
+reddit_client_id = st.secrets["REDDIT_CLIENT_ID"]
+reddit_client_secret = st.secrets["REDDIT_CLIENT_SECRET"]
+reddit_user_agent = st.secrets["REDDIT_USER_AGENT"]
+
+# Set environment variables if needed (optional)
+os.environ["SERPER_API_KEY"] = serper_api_key
+os.environ["REDDIT_CLIENT_ID"] = reddit_client_id
+os.environ["REDDIT_CLIENT_SECRET"] = reddit_client_secret
+os.environ["REDDIT_USER_AGENT"] = reddit_user_agent
 
 # Model Selection
 def initialize_llm(model_option, openai_api_key, groq_api_key):
