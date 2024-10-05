@@ -22,8 +22,7 @@ transformers==4.42.4
 numpy==1.26.4
 
 # ChromaDB Dependency
-chromadb==0.4.0  # Specify a version known to be stable
+chromadb>=0.4.22,<0.5.0  # Use a range compatible with crewai-tools
 
 # SQLite Dependencies
 pysqlite3-binary>=0.4.6  # Ensure the version is 0.4.6 or newer
-# sqlite3-binary is not necessary; pysqlite3-binary should suffice
