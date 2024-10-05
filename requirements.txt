@@ -1,0 +1,25 @@
+# Core Streamlit App Dependencies
+streamlit==1.36.0
+yfinance==0.2.41
+pandas==2.2.2
+plotly==5.22.0
+python-dotenv==1.0.1
+
+# CrewAI and Language Models
+crewai==0.41.1
+crewai-tools==0.4.8
+langchain==0.2.11
+langchain-community==0.2.10
+langchain-openai==0.1.16
+langchain-groq==0.1.6
+
+# Additional Libraries from Your Screenshot
+requests==2.32.3
+unstructured==0.14.10
+praw==7.7.1
+torch==2.3.1
+transformers==4.42.4
+numpy==1.26.4
+chromadb
+pysqlite3-binary
+sqlite3-binary
